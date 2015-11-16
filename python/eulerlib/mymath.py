@@ -33,4 +33,14 @@ def factors(n):
 			factors.append(i)
 			if( i != q):
 				factors.append(q)
-	return factors	
+	return factors
+
+def combination(n, k):
+	'''
+	n things taken k at a time without repetition
+	product for i=1 to k; n+1-i/i
+	'''
+	res = 1
+	for i in range(1,k+1):
+		res *= ((n+1-i)/i) 
+	return int(res)

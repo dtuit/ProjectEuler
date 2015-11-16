@@ -9,9 +9,9 @@ Find the product abc.
 '''
 
 import math
-from utils.mymath import gcd
+from eulerlib.mymath import gcd
 
-# naive solution 
+# optimized naive solution 
 def pythagorean_triples(max):
 	for a in range(1, max+1):
 		for b in range(a+1, max+1):
@@ -29,11 +29,10 @@ def special_pythagorean_triple():
 			return a*b*c
 		m+=1
 
+def solve():
+	return special_pythagorean_triple()
 
-x = special_pythagorean_triple()
-print(x)
-
-# fast Solution
+# faster Solution
 # a = (m^2 − n2^)*d, b = 2*m*n*d, c = (m^2 + n^2)*d,
 def pythagorean_triples_faster(s):
 	s2 = s/2
@@ -57,5 +56,9 @@ def pythagorean_triples_faster(s):
 					return (a,b,c)
 				k = k+2
 
-a, b, c = pythagorean_triples_faster(1000)
-print(a*b*c)
+def solve2():
+	a, b, c = pythagorean_triples_faster(1000)
+	return (a*b*c)
+
+if __name__ == '__main__':
+	print(solve2())

@@ -9,15 +9,19 @@ def evenfibs():
             yield x
         x, y = y, x + y
 
-efib = evenfibs()
+def solve():
+    efib = evenfibs()
 
-max = 4*10**6
-s = 0
+    max = 4*10**6
+    s = 0
 
-for i in efib:
-    if(i < max):
-    	s += i
-    else:
-    	break
+    for i in efib:
+        if(i < max):
+        	s += i
+        else:
+        	break
 
-print(s)
+    return s
+
+if __name__ == '__main__':
+    print(solve())

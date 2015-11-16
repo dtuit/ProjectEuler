@@ -19,6 +19,10 @@ def n_sumOfSqares(n):
 def n_sumSquare(n):
 	return int( ((n*(n+1))//2)**2 )
 
-x1 = n_sumOfSqares(100) 
-x2 = n_sumSquare(100)
-print(x2 - x1)
+def solve():
+	x1 = n_sumOfSqares(100) 
+	x2 = n_sumSquare(100)
+	return x2 - x1
+
+if __name__ == '__main__':
+	print(solve())

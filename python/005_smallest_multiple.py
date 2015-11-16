@@ -38,5 +38,8 @@ def lcmSmallestMultiple(a , b):
 		m = lcm(m, n)
 	return m
 
-x1 = lcmSmallestMultiple(1, 20)
-print(x1)
+def solve():
+	return lcmSmallestMultiple(1, 20)
+
+if __name__ == '__main__':
+	print(solve())

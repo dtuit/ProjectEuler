@@ -3,8 +3,10 @@ Work out the first ten digits of the sum of the one-hundred 50-digit numbers in 
 '''
 from functools import reduce
 
-txt_file = open("res/013.txt", "r")
+def solve():
+	txt_file = open("input/013.txt", "r")
+	num = sum([int(i) for i in txt_file])
+	return(str(num)[0:10])
 
-num = sum([int(i) for i in txt_file])
-
-print(str(num)[0:10])
+if __name__ == '__main__':
+	print(solve())

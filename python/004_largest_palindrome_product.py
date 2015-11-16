@@ -37,7 +37,8 @@ def bruteforcePalindrome_reversed(n , m):
                     break
     return lp
 
-print(bruteforcePalindrome(3, 3))
-print()
-print(bruteforcePalindrome_reversed(3, 3))
+def solve():
+    return bruteforcePalindrome_reversed(3, 3)
 
+if __name__ == '__main__':
+    print(solve())

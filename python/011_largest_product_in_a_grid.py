@@ -26,11 +26,6 @@ grid  = """\
 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48"""
 
-m = []
-for line in grid.split('\n'):
-	m.append([int(i) for i in line.split()])
-
-
 def find_max(m):
 	val = 0
 
@@ -49,6 +44,14 @@ def find_max(m):
 
 			val = max(d,r,dr,dl,val)
 
-	print(val)
+	return val
 
-find_max(m)
+def solve():
+	m = []
+	for line in grid.split('\n'):
+		m.append([int(i) for i in line.split()])
+
+	return find_max(m)
+
+if __name__ == '__main__':
+	print(solve())

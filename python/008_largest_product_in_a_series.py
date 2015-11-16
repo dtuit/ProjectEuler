@@ -17,9 +17,12 @@ def n_largestProduct_s(num, n):
 		if s < m:
 			s = m
 	return s
-		
-txt_file = open("res/008.txt", "r")
-num = [int(i) for i in txt_file.read().replace('\n', '')]
+	
+def solve():
+	txt_file = open("input/008.txt", "r")
+	num = [int(i) for i in txt_file.read().replace('\n', '')]
 
-x1 = n_largestProduct_s(num, 13)
-print(x1)
+	return n_largestProduct_s(num, 13)
+
+if __name__ == '__main__':
+	print(solve())
