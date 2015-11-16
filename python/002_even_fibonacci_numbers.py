@@ -17,9 +17,9 @@ def solve():
 
     for i in efib:
         if(i < max):
-        	s += i
+            s += i
         else:
-        	break
+            break
 
     return s
 

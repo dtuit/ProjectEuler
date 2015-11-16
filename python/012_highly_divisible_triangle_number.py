@@ -19,18 +19,18 @@ What is the value of the first triangle number to have over five hundred divisor
 from eulerlib.mymath import factors
 
 def triangle_numbers():
-	i = 1
-	n = 0
-	while True:
-		n = n + i
-		yield n
-		i += 1
+    i = 1
+    n = 0
+    while True:
+        n = n + i
+        yield n
+        i += 1
 
 def solve():
-	for i in triangle_numbers():
-		f = factors(i)
-		if( len(f) > 500):
-			return i
+    for i in triangle_numbers():
+        f = factors(i)
+        if( len(f) > 500):
+            return i
 
 if __name__ == '__main__':
-	print(solve())
+    print(solve())

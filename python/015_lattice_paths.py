@@ -7,9 +7,9 @@ How many such routes are there through a 20×20 grid?
 from eulerlib.mymath import combination
 
 def solve():
-	n,m = 20,20
-	# (n right paths + m down paths) choose n disregarding order
-	return combination(n+m, n)
+    n,m = 20,20
+    # (n right paths + m down paths) choose n disregarding order
+    return combination(n+m, n)
 
 if __name__ == '__main__':
-	print(solve())
+    print(solve())

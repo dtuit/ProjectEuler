@@ -5,24 +5,24 @@ Find the thirteen adjacent digits in the 1000-digit number that have the greates
 '''
 
 def n_largestProduct_s(num, n):
-	l = len(num)
-	s = 1
-	for z in num[0:n]:
-		s = s * z
+    l = len(num)
+    s = 1
+    for z in num[0:n]:
+        s = s * z
 
-	for i in range(1, l-n):
-		m = 1
-		for j in num[i:i+n]:
-			m = m * j
-		if s < m:
-			s = m
-	return s
-	
+    for i in range(1, l-n):
+        m = 1
+        for j in num[i:i+n]:
+            m = m * j
+        if s < m:
+            s = m
+    return s
+    
 def solve():
-	txt_file = open("input/008.txt", "r")
-	num = [int(i) for i in txt_file.read().replace('\n', '')]
+    txt_file = open("input/008.txt", "r")
+    num = [int(i) for i in txt_file.read().replace('\n', '')]
 
-	return n_largestProduct_s(num, 13)
+    return n_largestProduct_s(num, 13)
 
 if __name__ == '__main__':
-	print(solve())
+    print(solve())

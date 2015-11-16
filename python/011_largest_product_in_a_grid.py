@@ -27,31 +27,31 @@ grid  = """\
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48"""
 
 def find_max(m):
-	val = 0
+    val = 0
 
-	for i in range(len(m)):
-		for j in range(len(m[i])):
-			r,d,dr,dl = 0,0,0,0
+    for i in range(len(m)):
+        for j in range(len(m[i])):
+            r,d,dr,dl = 0,0,0,0
 
-			if(len(m[i]) >= j+4):
-				r = reduce(lambda x,y: x*y, (m[i][j+x] for x in range(4)) )
-			if(len(m) >= i+4):
-				d = reduce(lambda x,y: x*y, (m[i+x][j] for x in range(4)) )
-			if(len(m[i]) >= j+4 and len(m) >= i+4):
-				dr = reduce(lambda x,y: x*y, (m[i+x][j+x] for x in range(4)) )
-			if(len(m) >= i+4 and j-4 >= 0):
-				dl = reduce(lambda x,y: x*y, (m[i+x][j-x] for x in range(4)) )
+            if(len(m[i]) >= j+4):
+                r = reduce(lambda x,y: x*y, (m[i][j+x] for x in range(4)) )
+            if(len(m) >= i+4):
+                d = reduce(lambda x,y: x*y, (m[i+x][j] for x in range(4)) )
+            if(len(m[i]) >= j+4 and len(m) >= i+4):
+                dr = reduce(lambda x,y: x*y, (m[i+x][j+x] for x in range(4)) )
+            if(len(m) >= i+4 and j-4 >= 0):
+                dl = reduce(lambda x,y: x*y, (m[i+x][j-x] for x in range(4)) )
 
-			val = max(d,r,dr,dl,val)
+            val = max(d,r,dr,dl,val)
 
-	return val
+    return val
 
 def solve():
-	m = []
-	for line in grid.split('\n'):
-		m.append([int(i) for i in line.split()])
+    m = []
+    for line in grid.split('\n'):
+        m.append([int(i) for i in line.split()])
 
-	return find_max(m)
+    return find_max(m)
 
 if __name__ == '__main__':
-	print(solve())
+    print(solve())

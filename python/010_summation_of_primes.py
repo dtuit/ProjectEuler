@@ -8,16 +8,16 @@ from eulerlib.primes import infiniteSieveOfEratosthenes
 
 
 def solve():
-	primes = infiniteSieveOfEratosthenes()
+    primes = infiniteSieveOfEratosthenes()
 
-	s = 0
-	p = next(primes)
+    s = 0
+    p = next(primes)
 
-	while (p <= 2*10**6):
-		s += p
-		p = next(primes)
+    while (p <= 2*10**6):
+        s += p
+        p = next(primes)
 
-	return s
+    return s
 
 if __name__ == '__main__':
-	print(solve())
+    print(solve())

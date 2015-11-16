@@ -13,16 +13,16 @@ Find the difference between the sum of the squares of the first one hundred natu
 
 # https://oeis.org/A000330
 def n_sumOfSqares(n):
-	return n * (n+1)*(2*n+1)/6
+    return n * (n+1)*(2*n+1)/6
 
 # (n(n+1)/2)^2
 def n_sumSquare(n):
-	return int( ((n*(n+1))//2)**2 )
+    return int( ((n*(n+1))//2)**2 )
 
 def solve():
-	x1 = n_sumOfSqares(100) 
-	x2 = n_sumSquare(100)
-	return x2 - x1
+    x1 = n_sumOfSqares(100) 
+    x2 = n_sumSquare(100)
+    return x2 - x1
 
 if __name__ == '__main__':
-	print(solve())
+    print(solve())

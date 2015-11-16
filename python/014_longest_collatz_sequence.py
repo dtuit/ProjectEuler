@@ -14,54 +14,55 @@ Which starting number, under one million, produces the longest chain?
 NOTE: Once the chain starts the terms are allowed to go above one million.
 '''
 
+def solve_naive():
+    ans = 0
+    max = 0
+    for i in range(1, 10**6):
+        n = i
+        length = 0
+
+        while n != 1:
+            if n & 1:
+                n = n*3 + 1
+                length += 1
+            else:
+                n = int(n/2)
+                length += 1
+        if(length > max):
+            max = length
+            ans = i
+
+    print(ans, max)
+
 def solve():
-	ans = 0
-	max = 0
-	for i in range(1, 10**6):
-		n = i
-		length = 0
+    '''using a cache for previously found lengths'''
+    ans = 0
+    max = 0
+    cache = {}
+    for i in range(1, 10**6):
+        n = i
+        length = 0
 
-		while n != 1:
-			if n & 1:
-				n = n*3 + 1
-				length += 1
-			else:
-				n = int(n/2)
-				length += 1
-		if(length > max):
-			max = length
-			ans = i
+        while n != 1:
 
-	print(ans, max)
+            if n & 1:
+                n = n*3 + 1
+                length += 1
+            else:
+                n = int(n/2)
+                length += 1
 
-def solve_fast():
-	'''using a cache for previously found lengths'''
-	ans = 0
-	max = 0
-	cache = {}
-	for i in range(1, 10**6):
-		n = i
-		length = 0
+            if n in cache:
+                length += cache[n]
+                break
 
-		while n != 1:
+        cache[i] = length
 
-			if n & 1:
-				n = n*3 + 1
-				length += 1
-			else:
-				n = int(n/2)
-				length += 1
+        if(length > max):
+            max = length
+            ans = i
 
-			if n in cache:
-				length += cache[n]
-				break
+    return ans
 
-		cache[i] = length
-
-		if(length > max):
-			max = length
-			ans = i
-
-	print(ans, max)
-
-solve_fast()
+if __name__ == '__main__':
+    print(solve())
